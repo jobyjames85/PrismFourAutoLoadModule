@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="PrismFourAuto.Staff.StaffDetailsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <Grid>
+        <DataGrid Width="248"
+                  Height="122"
+                  Margin="20,54,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  ItemsSource="{Binding StaffList}" />
+        <Button Width="75"
+                Margin="161,196,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding ChangeView}"
+                Content="Button" />
+        <Button Width="128"
+                Margin="140,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding LoadChild}"
+                Content="Composite Button" />
+        <Button Width="75"
+                Margin="20,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Command="{Binding GoBackCommand}"
+                Content="Back" />
+        <Image Width="83"
+               Height="20"
+               Margin="138,10,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Source="pack://application:,,,/PrismAuto.Account;component/WIN_20150804_135055.JPG" />
+        <Image x:Name="im"
+               Width="50"
+               Height="50"
+               Margin="186,10,64,240"
+               HorizontalAlignment="Center"
+               Source="{Binding ElementName=test,
+                                Path=Text}" />
+        <TextBlock x:Name="test"
+                   Height="43"
+                   Margin="20,216,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Background="Red"
+                   Text="{Binding ThumbnailPath,
+                                  StringFormat=pack://application:\,\,\,/PrismAuto.Account;component/\{0\}}" />
+    </Grid>
+</UserControl>

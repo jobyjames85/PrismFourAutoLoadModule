@@ -1,0 +1,18 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" x:Class="PrismFourAuto.Account.AccountDetailView" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="Gray">
+        <Label Margin="41,145,0,0" Background="Gray"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Content="PrismAuto.Account.AccountDetailView" />
+
+       
+
+    </Grid>
+</UserControl>

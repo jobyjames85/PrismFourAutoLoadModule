@@ -1,0 +1,45 @@
+﻿<TreeViewItem x:Class="PrismFourAuto.Account.NavigationAccountModule"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:local="clr-namespace:PrismFourAuto.Account"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              d:DesignHeight="300"
+              d:DesignWidth="300"
+              mc:Ignorable="d">
+    <TreeViewItem.Resources>
+        <!--  HierarchicalDataTemplates  -->
+        <HierarchicalDataTemplate x:Key="categoriesEntry"
+                                  DataType="{x:Type local:EntityBase}"
+                                  ItemsSource="{Binding Path=SubEntity}">
+            <StackPanel Orientation="Horizontal" ToolTip="{Binding}">
+                <!--<ContentControl Margin="0 0 4 0"
+                                Content="{Binding Icon, Converter={x:Static infra:StringToImage.Default}}" />-->
+                <TextBlock VerticalAlignment="Center"
+                           FontWeight="Bold"
+                           Text="{Binding Path=Title}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <DataTemplate x:Key="headerDataTemplate" DataType="{x:Type local:Catalog}">
+            <StackPanel Orientation="Horizontal" ToolTip="{Binding}">
+                <!--<ContentPresenter Margin="0 0 4 0"
+                                  Content="{Binding  Icon, Converter={x:Static infra:StringToImage.Default}}" />-->
+                <TextBlock VerticalAlignment="Center"
+                           FontWeight="Bold"
+                           Text="{Binding Title,
+                                          Mode=TwoWay}" />
+            </StackPanel>
+        </DataTemplate>
+    </TreeViewItem.Resources>
+    <TreeViewItem Header="{Binding Root}"
+                  HeaderTemplate="{StaticResource headerDataTemplate}"
+                  ItemTemplate="{StaticResource categoriesEntry}"
+                  ItemsSource="{Binding Path=Categories}" />
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseDoubleClick">
+            <i:InvokeCommandAction Command="{Binding SelectedCommand}"
+                                   CommandParameter="{Binding Path=SelectedItem, RelativeSource={RelativeSource  AncestorType={x:Type TreeView}}}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+</TreeViewItem>

@@ -1,0 +1,115 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto", "PrismFourAuto\PrismFourAuto.csproj", "{FDCD27C0-45AD-4CD7-BD51-37F40092C80F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.Account", "PrismFourAuto.Account\PrismFourAuto.Account.csproj", "{91301EA4-71F8-4960-89B3-BAE0AF37D7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.Data", "PrismFourAuto.Data\PrismFourAuto.Data.csproj", "{6B2D3301-C012-4589-9E07-7228FBB71405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.Model", "PrismFourAuto.Model\PrismFourAuto.Model.csproj", "{79EE314B-7006-4AB0-A968-5692B8372087}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.NavigationInfo", "PrismFourAuto.NavigationInfo\PrismFourAuto.NavigationInfo.csproj", "{4751DA39-071A-42E6-A843-4395A7A84D80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.Common", "PrismFourAuto.Common\PrismFourAuto.Common.csproj", "{8944A4CD-F692-4474-B98C-9B50FBB528E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavBarControlAdapter", "NavBarControlAdapter\NavBarControlAdapter.csproj", "{E5F849B9-EE05-459B-AFB5-923651AC23DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.Staff", "PrismFourAuto.Staff\PrismFourAuto.Staff.csproj", "{340D96D5-14F6-4A75-91B4-69390DB57B4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.Login", "PrismFourAuto.Login\PrismFourAuto.Login.csproj", "{FE69E51F-81F7-4329-A635-37C2F1450263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismFourAuto.SharedData", "PrismFourAuto.SharedData\PrismFourAuto.SharedData.csproj", "{C2F2BB4C-04CA-4250-A07F-75B73DDD7A34}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jobyjamesprismauto.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PrismFourAuto\\PrismFourAuto.csproj
+		SccProjectName1 = PrismFourAuto
+		SccLocalPath1 = PrismFourAuto
+		SccProjectUniqueName2 = PrismFourAuto.Account\\PrismFourAuto.Account.csproj
+		SccProjectName2 = PrismFourAuto.Account
+		SccLocalPath2 = PrismFourAuto.Account
+		SccProjectUniqueName3 = PrismFourAuto.Data\\PrismFourAuto.Data.csproj
+		SccProjectName3 = PrismFourAuto.Data
+		SccLocalPath3 = PrismFourAuto.Data
+		SccProjectUniqueName4 = PrismFourAuto.Model\\PrismFourAuto.Model.csproj
+		SccProjectName4 = PrismFourAuto.Model
+		SccLocalPath4 = PrismFourAuto.Model
+		SccProjectUniqueName5 = PrismFourAuto.NavigationInfo\\PrismFourAuto.NavigationInfo.csproj
+		SccProjectName5 = PrismFourAuto.NavigationInfo
+		SccLocalPath5 = PrismFourAuto.NavigationInfo
+		SccProjectUniqueName6 = PrismFourAuto.Common\\PrismFourAuto.Common.csproj
+		SccProjectName6 = PrismFourAuto.Common
+		SccLocalPath6 = PrismFourAuto.Common
+		SccProjectUniqueName7 = NavBarControlAdapter\\NavBarControlAdapter.csproj
+		SccProjectName7 = NavBarControlAdapter
+		SccLocalPath7 = NavBarControlAdapter
+		SccProjectUniqueName8 = PrismFourAuto.Staff\\PrismFourAuto.Staff.csproj
+		SccProjectName8 = PrismFourAuto.Staff
+		SccLocalPath8 = PrismFourAuto.Staff
+		SccProjectUniqueName9 = PrismFourAuto.Login\\PrismFourAuto.Login.csproj
+		SccProjectName9 = PrismFourAuto.Login
+		SccLocalPath9 = PrismFourAuto.Login
+		SccProjectUniqueName10 = PrismFourAuto.SharedData\\PrismFourAuto.SharedData.csproj
+		SccProjectName10 = PrismFourAuto.SharedData
+		SccLocalPath10 = PrismFourAuto.SharedData
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDCD27C0-45AD-4CD7-BD51-37F40092C80F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDCD27C0-45AD-4CD7-BD51-37F40092C80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDCD27C0-45AD-4CD7-BD51-37F40092C80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDCD27C0-45AD-4CD7-BD51-37F40092C80F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91301EA4-71F8-4960-89B3-BAE0AF37D7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91301EA4-71F8-4960-89B3-BAE0AF37D7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91301EA4-71F8-4960-89B3-BAE0AF37D7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91301EA4-71F8-4960-89B3-BAE0AF37D7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B2D3301-C012-4589-9E07-7228FBB71405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B2D3301-C012-4589-9E07-7228FBB71405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B2D3301-C012-4589-9E07-7228FBB71405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B2D3301-C012-4589-9E07-7228FBB71405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79EE314B-7006-4AB0-A968-5692B8372087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79EE314B-7006-4AB0-A968-5692B8372087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79EE314B-7006-4AB0-A968-5692B8372087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79EE314B-7006-4AB0-A968-5692B8372087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4751DA39-071A-42E6-A843-4395A7A84D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4751DA39-071A-42E6-A843-4395A7A84D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4751DA39-071A-42E6-A843-4395A7A84D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4751DA39-071A-42E6-A843-4395A7A84D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8944A4CD-F692-4474-B98C-9B50FBB528E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8944A4CD-F692-4474-B98C-9B50FBB528E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8944A4CD-F692-4474-B98C-9B50FBB528E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8944A4CD-F692-4474-B98C-9B50FBB528E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F849B9-EE05-459B-AFB5-923651AC23DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F849B9-EE05-459B-AFB5-923651AC23DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F849B9-EE05-459B-AFB5-923651AC23DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F849B9-EE05-459B-AFB5-923651AC23DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{340D96D5-14F6-4A75-91B4-69390DB57B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340D96D5-14F6-4A75-91B4-69390DB57B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340D96D5-14F6-4A75-91B4-69390DB57B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340D96D5-14F6-4A75-91B4-69390DB57B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE69E51F-81F7-4329-A635-37C2F1450263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE69E51F-81F7-4329-A635-37C2F1450263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE69E51F-81F7-4329-A635-37C2F1450263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE69E51F-81F7-4329-A635-37C2F1450263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F2BB4C-04CA-4250-A07F-75B73DDD7A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F2BB4C-04CA-4250-A07F-75B73DDD7A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F2BB4C-04CA-4250-A07F-75B73DDD7A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F2BB4C-04CA-4250-A07F-75B73DDD7A34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

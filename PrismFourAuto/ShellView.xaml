@@ -1,0 +1,240 @@
+﻿<Window
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism1="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+     xmlns:PrismAutoProject="clr-namespace:PrismFourAuto"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" x:Class="PrismFourAuto.ShellView"
+             mc:Ignorable="d" WindowState="Maximized"
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Window.Resources>
+        <Style x:Key="RegionBorderControlStyle" TargetType="{x:Type PrismAutoProject:RegionBorderControl}">
+            <Setter Property="Margin" Value="8,2,2,2" />
+            <Setter Property="BorderBrush" Value="#FF425685" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Foreground" Value="#FFD3E2E8" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="Portable User Interface" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Offset="0" Color="#FFB3B7BA" />
+                        <GradientStop Offset="1" Color="#FF60697C" />
+                        <GradientStop Offset="0.208" Color="#FF606F7C" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SelectedTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsFocused}" Value="True">
+                    <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Self}}" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="TabHeaderStyle" TargetType="{x:Type TabItem}">
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <DataTemplate.Resources>
+                            <Style x:Key="ToolButtonStyle"
+                                   BasedOn="{x:Null}"
+                                   TargetType="{x:Type Button}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Grid>
+                                                <Rectangle x:Name="rectangle"
+                                                           Margin="2,0,2,0"
+                                                           HorizontalAlignment="Stretch"
+                                                           VerticalAlignment="Stretch"
+                                                           Fill="#66FFFFFF"
+                                                           Opacity="0"
+                                                           Stroke="{x:Null}"
+                                                           StrokeThickness="0.5" />
+                                                <Path x:Name="leftLine"
+                                                      Grid.RowSpan="1"
+                                                      Width="1"
+                                                      Height="18"
+                                                      Margin="0.5"
+                                                      HorizontalAlignment="Left"
+                                                      Data="M-87.28,4 L-87.28,17"
+                                                      Fill="{x:Null}"
+                                                      Stretch="Fill"
+                                                      Stroke="LightGray"
+                                                      StrokeThickness="1" />
+                                                <Path x:Name="rightLine"
+                                                      Grid.RowSpan="1"
+                                                      Width="1"
+                                                      Height="18"
+                                                      Margin="0.5"
+                                                      HorizontalAlignment="Right"
+                                                      Data="M-87.28,4 L-87.28,17"
+                                                      Fill="{x:Null}"
+                                                      Stretch="Fill"
+                                                      Stroke="LightGray"
+                                                      StrokeThickness="1" />
+                                                <ContentPresenter x:Name="presenter"
+                                                                  Margin="10,0,10,0"
+                                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                  RecognizesAccessKey="True"
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                                  TextElement.Foreground="LightGray" />
+                                            </Grid>
+                                            <ControlTemplate.Triggers>
+                                                <!--<Trigger Property="IsFocused"
+                                     Value="True" />-->
+                                                <!--<Trigger Property="IsDefaulted"
+                                     Value="True" />-->
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="rectangle" Property="Opacity" Value="0.5" />
+                                                    <Setter TargetName="presenter" Property="TextElement.Foreground" Value="Red" />
+                                                    <Setter TargetName="leftLine" Property="Path.Stroke" Value="Red" />
+                                                    <Setter TargetName="rightLine" Property="Path.Stroke" Value="Red" />
+                                                    <Setter TargetName="rectangle" Property="Rectangle.Fill" Value="LightGray" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="True">
+                                                    <Setter TargetName="rectangle" Property="Opacity" Value="1" />
+                                                    <Setter TargetName="rectangle" Property="Fill" Value="DarkGray" />
+                                                </Trigger>
+                                                <Trigger Property="IsEnabled" Value="False" />
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataTemplate.Resources>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="16"
+                                   Height="16"
+                                   Margin="0,0,2,0"
+                                   Source="pdf-ico-black.png" />
+                            <TextBlock VerticalAlignment="Center"
+                                       Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContentControl}},
+                                                      Path=Content.DataContext.CurrentItem.Title}"
+                                       TextTrimming="CharacterEllipsis" />
+
+                            <Button Margin="5,0,0,0"
+                                    Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContentControl}},
+                                                      Path=Content.DataContext.KillingCommand}"
+                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type ContentControl}},
+                                                               Path=Content}"
+                                    Content="x"
+                                    Style="{StaticResource ToolButtonStyle}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ItemsControl Grid.Row="0"
+                      Grid.ColumnSpan="3"
+                      Margin="5"
+                      Background="Red"
+                      prism:RegionManager.RegionName="TitleRegion">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="Test" />
+                        <Border Margin="10"
+                                BorderBrush="Red"
+                                BorderThickness="1"
+                                CornerRadius="5"
+                                Padding="10">
+                            <ContentPresenter Content="{Binding}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.ColumnSpan="5">
+            <Button Width="50" Content="&lt;" Command="{Binding LoadModuleCommand}"></Button>
+            <Button Width="50" Content="&lt;" Command="{Binding Path=JournalBackCommand}"></Button>
+            <Button Width="50" Content="&gt;" Command="{Binding Path=JournalForwardCommand}" ></Button>
+        </StackPanel>
+        <dxn:NavBarControl Grid.Row="1"
+                        Grid.Column="0"
+                        Background="Green" Name="navBarControl" prism:RegionManager.RegionName="NavigationRegion">
+            <dxn:NavBarControl.View>
+                <dxn:NavigationPaneView />
+            </dxn:NavBarControl.View>
+        </dxn:NavBarControl>
+
+        <!--<Border Background="Blue" BorderThickness="5" BorderBrush="Yellow" >-->
+        <!--<PrismAutoProject:RegionBorderControl
+                                              RegionName="Navigation">-->
+        <TreeView Grid.Row="1"
+                  Grid.Column="1"
+                  HorizontalContentAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  Background="LightBlue"
+                  prism:RegionManager.RegionName="TreeRegion" />
+        <!--</PrismAutoProject:RegionBorderControl>-->
+        <!--</Border>-->
+        <Grid Grid.Row="1" Background="LightPink"
+                        Grid.Column="2">
+            <Border Height="50" VerticalAlignment="Top" Background="White">
+                <StackPanel Orientation="Horizontal">
+                    <Button Width="85" Content="&lt;" Command="{Binding GoForwardCommand}" />
+                    <Button Width="85" Content="&gt;" Command="{Binding GoBackCommand}" />
+                </StackPanel>
+            </Border>
+            <ContentControl Margin="0,50,0,0"
+
+                        prism:RegionManager.RegionName="MainRegion" />
+        </Grid>
+
+        <TabControl Grid.Row="1"
+                    Grid.Column="3"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    Foreground="#FF546780"
+                    ItemContainerStyle="{StaticResource TabHeaderStyle}"
+                    prism:RegionManager.RegionName="TabRegion">
+
+            <TabControl.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="1" Color="#FF6999C2" />
+                    <GradientStop Color="#FFEDF2F5" />
+                </LinearGradientBrush>
+            </TabControl.Background>
+        </TabControl>
+
+        <ContentControl Grid.Row="1"
+                        Grid.Column="4"
+                        Background="Yellow"
+                        prism:RegionManager.RegionName="SideRegion" />
+
+        <ContentControl x:Name="FooterAction"
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        Background="Blue"
+                        prism:RegionManager.RegionName="FooterRegion" />
+    </Grid>
+</Window>
